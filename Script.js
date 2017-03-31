@@ -2,7 +2,7 @@ var MyApp = angular.module('MyApp', []);
 
 MyApp.controller("gitController", function($scope, $http) {
     $scope.getRepos = function() {
-        if ($scope.username) {
+        if ($.trim($scope.username) != '') {
             //set url for HTTP request
             var Url = "https://api.github.com/users/" + $scope.username + "/repos";
             //use $http to pull data from the Github API using GET method
